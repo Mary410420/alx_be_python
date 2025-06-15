@@ -1,4 +1,3 @@
-# robust_division_calculator.py
 
 def safe_divide(numerator, denominator):
     try:
@@ -14,10 +13,6 @@ def safe_divide(numerator, denominator):
     except ValueError:
         return "Error: Please enter numeric values only."
 
-# main.py
-
-import sys
-from robust_division_calculator import safe_divide
 
 def main():
     if len(sys.argv) != 3:
@@ -30,5 +25,4 @@ def main():
     result = safe_divide(numerator, denominator)
     print(result)
 
-if __name__ == "__main__":
-    main()
+

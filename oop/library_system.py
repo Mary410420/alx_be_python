@@ -67,3 +67,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+Pride and Prejudice by Jane Austen
+Snow Crash by Neal Stephenson [EBook, 500MB]
+The Catcher in the Rye by J.D. Salinger [PrintBook, 234 pages]

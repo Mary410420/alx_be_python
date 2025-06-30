@@ -8,6 +8,9 @@ class Book:
     def get_details(self):
         return f"{self.title} by {self.author}"
 
+    def __str__(self):
+        return self.get_details()
+
 
 class EBook(Book):
     def __init__(self, title, author, file_size):
@@ -17,6 +20,9 @@ class EBook(Book):
     def get_details(self):
         return f"{self.title} by {self.author} [EBook, {self.file_size}MB]"
 
+    def __str__(self):
+        return self.get_details()
+
 
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
@@ -25,6 +31,9 @@ class PrintBook(Book):
 
     def get_details(self):
         return f"{self.title} by {self.author} [PrintBook, {self.page_count} pages]"
+
+    def __str__(self):
+        return self.get_details()
 
 
 class Library:
@@ -42,31 +51,4 @@ class Library:
             print("The library is empty.")
         else:
             for book in self.books:
-                print(book.get_details())
-
-# main.py
-
-from library_system import Book, EBook, PrintBook, Library
-
-def main():
-    # Create a Library instance
-    my_library = Library()
-
-    # Create instances of each type of book
-    classic_book = Book("Pride and Prejudice", "Jane Austen")
-    digital_novel = EBook("Snow Crash", "Neal Stephenson", 500)
-    paper_novel = PrintBook("The Catcher in the Rye", "J.D. Salinger", 234)
-
-    # Add books to the library
-    my_library.add_book(classic_book)
-    my_library.add_book(digital_novel)
-    my_library.add_book(paper_novel)
-
-    # List all books in the library
-    my_library.list_books()
-
-if __name__ == "__main__":
-    main()
-Pride and Prejudice by Jane Austen
-Snow Crash by Neal Stephenson [EBook, 500MB]
-The Catcher in the Rye by J.D. Salinger [PrintBook, 234 pages]
+                print(book)  # Uses __str__ automatically
